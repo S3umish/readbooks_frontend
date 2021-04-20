@@ -11,9 +11,3 @@ function handleFormSubmit(e){
     e.preventDefault()
     
 }
-
-
-ApiService.getBooks()
-
-
-ApiService.getCategories()
