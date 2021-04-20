@@ -8,16 +8,6 @@ class Category{
         Category.allCategories.push(this)
     }
 
-    static generateCategory() {
-        const categoryData = apiService.fetchCategory()
-            .then(data => 
-                data.forEach(category => {
-                    const newCategory = new Category(category)
-                    console.log(newCategory)
-                })
-            )
-       
-
-    }
+    
 }
 

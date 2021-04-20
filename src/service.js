@@ -1,26 +1,63 @@
-class ApiService{
 
-    static baseBookURL = 'http://localhost:3000/books'
+const BASEURL = "http://localhost:3000/"
 
-    static fetchBooks(){
-        return fetch(`${this.baseBookURL}`,{
-            headers: {
-                'Content-Type': 'application/json',
-            }
+function fetchBooks(){
+    return fetch(`${BASEURL}/books`)
+    .then(response => response.json())
+    .then(data => {
+
+        data["data"].forEach(book => {
+                const newBook = new Book({id: book.id, ...book.attributes})
+                newBook.renderBook()
         })
-
-        .then(res => res.json())
-    }
-
-    static baseCategoryURL = 'http://localhost:3000/categories'
-    
-    static fetchCategory(){
-        return fetch(`${this.baseCategoryURL}`,{
-            headers: {
-                'Content-Type': 'application/json',
-            }            
-        })
-        .then(res => res.json())
-    }
+        
+    })
 
 }
+
+
+//CREATE
+function newBookForm(){
+    let bookForm = document.getElementById("books-form")
+    bookForm.addEventListener("submit", bookFormSubmit)
+}
+
+
+function bookFormSubmit(event){
+    event.preventDefault()
+    let title = document.getElementById("title").value
+    let likes = document.getElementById("likes").value
+    let remarks = document.getElementById("remarks").value
+    let image_url = document.getElementById("image_url").value
+    let category_id = document.getElementById("id").value
+    
+    let book = {
+        title: title, 
+        likes: likes,
+        remarks: remarks,
+        image_url: image_url,
+        category_id: category_id
+    }
+    fetch(`${BASEURL}/books`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify(project)
+    })
+
+    .then(response =>  {
+        response.json()
+    })
+    .then(json => {
+        console.log(json)
+    })
+}
+
+
+
+
+
+
+

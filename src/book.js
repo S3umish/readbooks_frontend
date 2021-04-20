@@ -4,31 +4,22 @@ class Book {
 
     constructor(book){
         this.id = book.id
+        this.title = book.title
         this.image_url = book.image_url
         this.likes = book.likes
         this.remarks = book.remarks
+        this.category_id = book.category_id
         Book.allBooks.push(this)
     }
 
-    static generateBooks(){
-        debugger
-        apiService.fetchBooks()
-            .then(data =>
-                data.forEach(book =>{
-                    const newBook = new Book(book)
-                    // console.log(newBook)
-                    Book.renderBooks(book)
-                })                               
-            )
-    }
 
 
-    static renderBooks(book){
-        let List = document.getElementById("List-of-Books")
+    renderBook(){
+        let bookDiv = document.getElementById("List-of-Books")
         
-        List.innerHTML +=
+        bookDiv.innerHTML +=
         
-        "<img src=\""+this.image_URL+"\">"+
+        "<img src=\""+this.image_url+"\">"+
       
         `<ul>
         <h2>Book Title: <strong class="title">${this.title}</strong></h2>
@@ -39,7 +30,8 @@ class Book {
             Remarks: <span class="remarks">${this.remarks}</span>
             </li>
     
-        <button class="delete-button" onclick="deleteBook(${this.id})" data-id=${this.id}>Delete Book</button></ul>`
+        <button class="delete-button" onclick="deleteBook(${this.id})" data-id=${this.id}>Delete Book</button>
+        </ul>`
     }
 
 
