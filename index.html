@@ -11,11 +11,14 @@
             <div class ="container" id="container">
                 <h1> Book Reading List </h1>
                     <div id = "new-category-and-new-book-container">
-                        <form id = "new-category-form">
+                    
+                      <div class ="field">
                             <label>Category Name:</label>
-                            <input type= "text" id="new-category"/>
-                            <input type = "submit" class ="submit" id = "submitButton" />                      
-                        </form>
+                            <select id ="id" name="id" onchange="$('category_id').submit()">
+                              <option name = "category_id" value="4">To Read</option>
+                              <option name = "category_id" value="4">Reading</option>
+                              <option name = "category_id" value="4">Finished</option>
+                      </select>                                            
                     </div>
                 <div id= "books-container" class = "books-container">
 

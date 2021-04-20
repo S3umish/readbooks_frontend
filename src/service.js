@@ -52,6 +52,7 @@ function bookFormSubmit(event){
     })
     .then(json => {
         console.log(json)
+        window.location.reload()
     })
 }
 
