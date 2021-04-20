@@ -1,0 +1,7 @@
+class Book {
+
+    static all =[]
+    
+
+    
+}
