@@ -13,6 +13,7 @@ class ApiService{
     }
 
     static baseCategoryURL = 'http://localhost:3000/categories'
+    
     static fetchCategory(){
         return fetch(`${this.baseCategoryURL}`,{
             headers: {
