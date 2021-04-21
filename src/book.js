@@ -16,27 +16,24 @@ class Book {
 
     renderBook(){
 
-        // const bookContainer = document.querySelector(".books-container")
+        let divCard = document.createElement("div")
+        divCard.id = "cardID"
+        divCard.className ="info -card"
 
-        let bookDiv = document.getElementById("List-of-Books")
-        
-        // bookDiv.innerHTML +=
 
-        bookDiv.id ="cardID"
-        bookDiv.className ="card";
+        let H2 = document.createElement("h2")
+        H2.innerText = this.title;
 
-        let newh2 = document.createElement("h2")
-        newh2.innerText = this.title;
+        const H3 = document.createElement("h2")
+        H3.innerText = this.likes;
 
-        const newh3 = document.createElement("h2")
-        newh3.innerText = this.likes;
+        const H4 = document.createElement("h4")
+        H4.innerText = this.remarks;
 
-        const newh4 = document.createElement("h4")
-        newh4.innerText = this.remarks;
-
-        const newImg = document.createElement("img")
-        newImg.className ="book-avatar"
-        newImg.src = this.image_url;
+        const Img = document.createElement("img")
+        Img.className ="book-avatar"
+        Img.src = this.image_url;
+    
 
         const newButton = document.createElement("button")
         newButton.setAttribute('data-id', this.id)
@@ -50,9 +47,9 @@ class Book {
         delButton.id ="delButton"
         delButton.innerText = "Remove";
 
-        divCard.append(newH2, newImg, newH3, newH4, newB, delB);
+        divCard.append(H2, Img, H3, H4, newButton, delButton);
 
-
+        bookShow.append(divCard)
         
     
 
