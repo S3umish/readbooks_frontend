@@ -18,16 +18,16 @@ class Book {
 
         let divCard = document.createElement("div")
         divCard.id = "cardID"
-        divCard.className ="info -card"
+        divCard.className ="card"
 
 
-        let H2 = document.createElement("h2")
+        let H2 = document.createElement("h4")
         H2.innerText = this.title;
 
         const H3 = document.createElement("h2")
         H3.innerText = this.likes;
 
-        const H4 = document.createElement("h4")
+        const H4 = document.createElement("h6")
         H4.innerText = this.remarks;
 
         const Img = document.createElement("img")
@@ -39,7 +39,7 @@ class Book {
         newButton.setAttribute('data-id', this.id)
         newButton.classname = "show-btn"
         newButton.id ="showButton"
-        newButton.innerText = "Display";
+        newButton.innerText = "Edit";
 
         const delButton = document.createElement("button")
         delButton.setAttribute('data-id', this.id)
@@ -50,28 +50,7 @@ class Book {
         divCard.append(H2, Img, H3, H4, newButton, delButton);
 
         bookShow.append(divCard)
-        
-    
-
-        // let bookDiv = document.getElementById("List-of-Books")
-        
-        // bookDiv.innerHTML +=
-        
-        // "<img src=\""+this.image_url+"\">"+
-      
-        // `<ul>
-        // <h2>Book Title: <strong class="title">${this.title}</strong></h2>
-        //     <li>
-        //     Likes: <span class="likes">"${this.likes}."</span>
-        //     </li>
-        //     <li>
-        //     Remarks: <span class="remarks">${this.remarks}</span>
-        //     </li>
-    
-        // <button class="delete-button" onclick="deleteBook(${this.id})" data-id=${this.id}>Delete Book</button>
-        // </ul>`
-
-        
+     
     }
 
 

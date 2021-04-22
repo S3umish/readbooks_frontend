@@ -6,14 +6,14 @@
   #book-header {
     display: flex;
     justify-content: center;
-    background: #f3f0f0;
+    background: #cfc6c6;
     opacity: .8;
-    height: 9rem;
+    height: 2rem;
     padding: 1rem;
   }
   
-  #book-header img {
-    height: 10rem;
+  #book-header{
+    height: 2rem;
     width: auto;
   }
   
@@ -29,7 +29,7 @@
     height: 25rem;
     display: inline-grid;
     margin: 1rem 2rem;
-    box-shadow: 3px 4px #e04b52
+    box-shadow: 3px 4px #10b333
   }
   
   .book-avatar {
@@ -43,7 +43,7 @@
     background-color: #e04b52;
     border: none;
     border-radius: 5px;
-    height: 3rem;
+    height: 2rem;
     width: max-content;
     color: whitesmoke;
     font-size: 18px;
@@ -66,12 +66,12 @@
   }
   
   .add-book-form {
-    width: 80%
+    width: 60%
   }
   
   .submit {
     position: relative;
-    background-color: #e04b52;
+    background-color: #db270f;
     border-radius: 5px;
     height: 2rem;
     width: max-content;
