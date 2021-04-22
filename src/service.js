@@ -2,7 +2,7 @@ class BooksApi{
 
     constructor () {
 
-        this. BASE_URL = "http://localhost:3000/books"
+        this.BASE_URL = "http://localhost:3000/books"
     }
     
     fetchBooks(){
@@ -34,12 +34,12 @@ class BooksApi{
             image_url: image_url,
             category_id: category_id
         }
-        let configObj = {
-            
+
+        let configObj = { 
             method :"POST",
             headers: {
                 "Content-Type": "application/json",
-                Accept: "application/json"
+                  Accept: "application/json"
             },
             body: JSON.stringify(book)
         }
@@ -53,11 +53,6 @@ class BooksApi{
             let bookForm = document.getElementById("books-form")
             bookForm.reset()
     }
-
-
-
-
-    
 
     
 } 
