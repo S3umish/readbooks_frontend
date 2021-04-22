@@ -2,7 +2,7 @@
 
 class Book {
 
-    static allBooks =[]
+    static allBooks = []
 
     constructor(book){
         this.id = book.id
@@ -11,15 +11,18 @@ class Book {
         this.likes = book.likes
         this.remarks = book.remarks
         this.category_id = book.category_id
+
         Book.allBooks.push(this)
     }
 
+   
     renderBook(){
 
         let divCard = document.createElement("div")
         divCard.id = "cardID"
         divCard.className ="card"
 
+        // this.element.innerHTML= ``
 
         let H2 = document.createElement("h4")
         H2.innerText = this.title;
