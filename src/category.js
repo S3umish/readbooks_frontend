@@ -37,6 +37,7 @@ class Category{
       }
 
      addListeners(){
+        e.preventdefault()
       this.element.addEventListener('click', this.setActiveCategory)
      }
 
@@ -60,12 +61,12 @@ class Category{
 
     }
 
-    addToDropDown(){
-        const option = document.createElement('option')
-        option.value  = this.id 
-        option.innerText = this.name
-        dropdown.append(option)
-    }
+    // addToDropDown(){
+    //     const option = document.createElement('option')
+    //     option.value  = this.id 
+    //     option.innerText = this.name
+    //     dropdown.append(option)
+    // }
 
 
 }

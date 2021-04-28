@@ -3,15 +3,16 @@ class Book {
 
     static all = []
 
+    static list = document.querySelector("#List-of-Books")
+
     constructor(book){
         this.id = book.id
         this.title = book.title
         this.image_url = book.image_url
-        // this.likes = book.likes
         this.remarks = book.remarks
         this.category_id = book.category_id
 
-        // this.element = document.createElement('div')
+        this.element = document.createElement('div')
         // this.element.id = `book-${id}`
         // this.element.dataset.id = id 
 
@@ -46,9 +47,29 @@ class Book {
         }
     }
 
+        // static editButton = document.querySelector("#showButton"){
 
-   
+        //    editButton.addEventListener("click",handleEditClick)
+        // }
+
+        //  handleEditClick(e){
+        //     e.target.dataset.id
+
+        // }
+
+        // static delButton = document.querySelectorAll("#delButton"){
+
+        //     delButton.addEventListener("click", handleDeleteClick)
+        // }
+
+        // handleDeleteClick(e){
+        //     e.target.dataset.id
+        // }
+ 
+
+
     renderBook(){
+
 
         let divCard = document.createElement("div")
         divCard.id = "cardID"
@@ -81,6 +102,12 @@ class Book {
 
         bookShow.append(divCard)
      
+    }
+
+
+
+    deleteBook = (e) => {
+        BookApi.deleteItem(this.id)
     }
 
     

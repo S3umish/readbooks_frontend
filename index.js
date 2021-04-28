@@ -1,35 +1,49 @@
 const BASE_URL = "http://localhost:3000"
-// const BookApi = new BooksApi
+
 
 const categoryForm = document.getElementById("category-form")
 
-const list = document.getElementById("List-of-Books")
+const list = document.querySelector("#List-of-Books")
 
 const bookShowPage = document.getElementById("display-books")
 
-const categories = document.getElementById("categories")
-const titleInput = document.getElementById("input-title")
-const imageInput = document.getElementById("input-image")
-const likesInput = document.getElementById("input-likes")
-const remarksInput = document.getElementById("input-remarks")
-const submitButton = document.getElementById("submitButton")
 
-const bookShow = document.getElementById("book-show")
+// const titleInput = document.querySelector("#input-title")
+// const imageInput = document.querySelector("#input-image")
+// const remarksInput = document.querySelector("#input-remarks")
+const submitButton = document.getElementById("create-button")
+
+// const categoryId = document.querySelector("#categories")
+
+const dropdown = document.querySelector("#cat-dropdown")
+
+
+const bookShow = document.querySelector("#book-show")
 bookShow.addEventListener("click",handleBookClick)
 
-const form = document.getElementById("create-book-form")
-form.addEventListener('submit', handleFormSubmit)
+const form = document.querySelector("#create-book-form")
+form.addEventListener("submit", handleFormSubmit)
+
+
 
 function handleFormSubmit(e) {
-    e.preventdefault()
-    BookApi.postBook()
+    console.log("clicked")
+    e.preventDefault()
+    
+    BookApi.formHandler()
+    
 }
 
 function handleBookClick(e){
      e.preventdefault
-    const id  = e.target.dataset.id
-    BookApi.deleteBook()
-}
+    // const id  = e.target.dataset.id
+    // BookApi.deleteBook()
+ }
+
+
+
+ 
+
 
 
 BookApi.fetchBooks()
