@@ -16,6 +16,7 @@ class BookApi{
         })
     }
 
+    //POST
      static formHandler() {
          
         const title = document.querySelector("#input-title").value 
@@ -82,10 +83,12 @@ class BookApi{
     
     }
 
+
+
     //DELETE
 
     static deleteBook(id){
-        debugger
+        // debugger
         let configObj = {
             method: "DELETE",
             headers: {
@@ -94,7 +97,7 @@ class BookApi{
             }
         }
 
-        fetch(`${BASE_URL}/${id}`, configObj)
+        fetch(`${BookApi.baseURL}/${id}`, configObj)
         .then(res => res.json())
         .then(json => {
             alert(json.message)

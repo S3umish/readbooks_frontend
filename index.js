@@ -27,7 +27,7 @@ form.addEventListener("submit", handleFormSubmit)
 
 
 function handleFormSubmit(e) {
-    console.log("clicked")
+   
     e.preventDefault()
     
     BookApi.formHandler()
@@ -35,9 +35,12 @@ function handleFormSubmit(e) {
 }
 
 function handleBookClick(e){
+    console.log("clicked")
      e.preventdefault
-    // const id  = e.target.dataset.id
-    // BookApi.deleteBook()
+    //  debugger
+    const id  = e.target.dataset.id
+    
+    BookApi.deleteBook(id)
  }
 
 
