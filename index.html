@@ -18,23 +18,20 @@
               <h1 class="display-4 text-center">
                 <i class="fas fa-book-reader text-warning"></i> My<span class="text-success">Reading</span>Log</h1>          
                 
-                    <div id = "new-category-and-new-book-container">
                     
-                      <div class ="field">
-                            <label>Category Name:</label>
-                             <select id ="id" name="id" onchange="$('category_id').submit()">
-                              <option name = "category_id" value="4">To Read</option>
-                              <option name = "category_id" value="4">Reading</option>
-                              <option name = "category_id" value="4">Finished</option>
-                      </select>                                            
-                    </div>
+                   
+   
+                
+                 <!-- <label for="category-dropdown"> Select Category (click):</label><br><br>
+                   <select id="category_id" name="category-list"></select>  -->
+                
 
-                <div id= "books-container" class = "books-container">
 
-                    <form id="book-form">
+                    <form id="create-book-form">
+
                         <div class="form-group">
                           <label for="title">Title</label>
-                          <input type="text" id="title" class="form-control"
+                          <input type="text" id="input-title" class="form-control"
                           placeholder="Enter Book's Title">
                         </div>
 
@@ -42,7 +39,7 @@
                            <label for="bookImg">Book's Image Link</label>
                             <input
                             type="text"
-                            id="image_url"
+                            id="input-image"
                             name="image_url"
                             value=""
                             placeholder="Enter a book's image URL"
@@ -51,23 +48,38 @@
                           </div>
 
                           <div class="form-group">
-                            <label for="likes">Likes</label>
-                            <input type="text" id="likes" class="form-control"
-                            placeholder="Enter Book's Likes">
-                          </div> 
-
-                          <div class="form-group">
                             <label for="remarks">Remarks</label>
-                            <input type="remarks" id="remarks" class="form-control"
+                            <input type="remarks" id="input-remarks" class="form-control"
                             placeholder="Enter Book's Remarks">
                           </div>
 
-                        <input type="submit" value="Add Book" class="btn btn-success btn-block">
+                        </div>             
+                             
+                        <select id ="categories" name="categories">
+                            <option name = "categories" value="1">To Read</option>
+                            <option name = "categories" value="2">Reading</option>
+                            <option name = "categories" value="3">Finished</option> 
+                        </select> 
+                        <br><br>
+
+                        <input id="create-button" type="submit" name="submit" value="Add Book" class="btn btn-success btn-block">
                     </form>
-                    <div id = "books-container" class = "books-container">
-                      <h2>Add to your Collection</h2>
+
+          
+                      <div class="column">
+                        <div id = "category-container">
+                          <div id="category-form"></div>
+
+                            <h2>Filter By Category:</h2> 
+                            <!-- <select name="category" id="categoryDropdown" onchange="filterByCategory(this)">
+                                <option name= "category_id" value="0">All</option>
+                            </select> -->
+                        </ul>
+                      </div> 
+
+                      <!-- <h2>Add to your Collection</h2> -->
                     <div id = "List-of-Books" ></div>
-                    <!-- <div class="card"></div> -->
+                     <!-- <div class="card"></div>  -->
 
                     <div id="display-books"></div>
                     <div id="book-show"></div>
@@ -79,7 +91,8 @@
         
         <script src="src/category.js" type="text/javascript"></script>
         <script src="src/book.js" type="text/javascript"></script>
-        <script src="src/service.js" type="text/javascript"></script>
+        <script src="src/bookService.js" type="text/javascript"></script>
+        <script src="src/categoryService.js" type="text/javascript"></script>
         <script src="index.js" type="text/javascript"></script>
         
     </body>
