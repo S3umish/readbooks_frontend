@@ -4,6 +4,7 @@ class Category{
     
     static categoryForm = document.querySelector("#category-form")
 
+
     constructor(category){
         this.id = category.id
         this.name = category.name
@@ -20,8 +21,6 @@ class Category{
     }
 
 
-
-
     render(){
 
         this.element.innerText = this.name 
@@ -31,6 +30,7 @@ class Category{
     }
 
     addToDom(){
+
         Category.categoryForm.append(this.render())
          this.addListeners()
     }
@@ -56,18 +56,18 @@ class Category{
             
         }) 
         
-          Book.filterByCategory(chooseCategory)
+        //   Book.filterByCategory(chooseCategory)
 
     }
 
-    static findById(id) {
+    // static findById(id) {
 
-        // return this.allCategories.find(category => category.id === id)
-    }
+    //     // return this.allCategories.find(category => category.id === id)
+    // }
 
-    static chooseCategory(){
-        // return this.allCategories.filter(category => category.name === this.name)
-    }
+    // static chooseCategory(){
+    //     // return this.allCategories.filter(category => category.name === this.name)
+    // }
 
 
     // static filterByCategory(e){
@@ -83,7 +83,12 @@ class Category{
             
     //     ))
 
-
+    // addToDropDown(){
+    //     const option = document.createElement('option')
+    //     option.value  = this.id 
+    //     option.innerText = this.name
+    //     dropdown.append(option)
+    // }
 
 
     }

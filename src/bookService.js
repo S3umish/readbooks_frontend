@@ -25,12 +25,16 @@ class BookApi{
         const categoryId = parseInt(document.querySelector("#categories").value)
         
         BookApi.createBook(title, image_url, remarks, categoryId)
-        form.reset
+        
        
     }
 
     static createBook(title, image_url, remarks, category_id) {
         const bodyData = {book:{title, image_url, remarks, category_id}}
+
+        // const bodyData = {title, image_url, remarks, category_id}
+        console.log(bodyData)
+        // debugger
        
         let configObj = {
             method: 'POST',
@@ -40,13 +44,14 @@ class BookApi{
             },
             body: JSON.stringify(bodyData)
         }
+
+        // debugger
         fetch(BookApi.baseURL, configObj)
         .then(response => response.json())
         .then(data => {
-
             const book = data["data"]
+            // debugger
             console.log(book)
-            
             let newBook = new Book({id: book.id, ...book.attributes})
                 newBook.renderBook()
         
@@ -73,6 +78,7 @@ class BookApi{
             alert(json.message)
 
         })
+        
 
     }
     

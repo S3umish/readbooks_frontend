@@ -10,8 +10,8 @@ const submitButton = document.getElementById("create-button")
 const dropdown = document.querySelector("#cat-dropdown")
 
 
- const bookShow = document.querySelector("#book-show")
- bookShow.addEventListener("click",handleBookClick)
+const bookShow = document.querySelector("#book-show")
+// bookShow.addEventListener("click",handleBookClick)
 
 
 
@@ -22,14 +22,12 @@ form.addEventListener("submit", handleFormSubmit)
 
 function handleFormSubmit(e) {
     e.preventDefault()  
-    BookApi.formHandler()   
+    BookApi.formHandler() 
+    form.reset() 
+      
 }
 
-function handleBookClick(e){
-     e.preventdefault
-    const id  = e.target.dataset.id
-    BookApi.deleteBook(id)
- }
+
 
 
 BookApi.fetchBooks()

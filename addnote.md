@@ -75,7 +75,13 @@
     }
 
 
-5)
+5) edited handleBook for delete
+
+// function handleBookClick(e){
+//      e.preventdefault
+//     const id  = e.target.dataset.id
+//     BookApi.deleteBook(id)
+//  }
 
 
  

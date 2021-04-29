@@ -38,6 +38,7 @@ class Book {
         delButton.classname = "del-btn"
         delButton.id ="delButton"
         delButton.innerText = "Remove";
+        delButton.addEventListener("click",this.handleDelete)
 
         divCard.append(H2, Img , H4, delButton);
 
@@ -45,25 +46,13 @@ class Book {
      
     }
 
-
-    
-    static filterByCategory(chooseCategory){
-        
-        if (chooseCategory){
-            for (const book of Book.all){
-                if(book.categoryId === parseInt(chooseCategory.id)){
-                    book.element.style.display = ""
-                } else {
-                    book.element.style.display = "none"
-                }
-            }
-        } else {
-             
-            for (const book of book.all){
-                book.element.style.display = ""
-            }
-        }
-       
+    handleDelete = (e) => {
+        e.preventDefault
+        console.log(this)
+        e.target.parentElement.remove()
+        BookApi.deleteBook(this.id)
     }
-    
+          
+
 }
+

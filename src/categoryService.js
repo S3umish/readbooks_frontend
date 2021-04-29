@@ -10,6 +10,7 @@ class CategoryApi {
             json["data"].forEach(category => {                
                 const newCategory = new Category({id: category.id, ...category.attributes})
                 newCategory.addToDom()
+                // newCategory.addToDropDown()
             })        
 
         })
