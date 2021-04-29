@@ -1,8 +1,8 @@
 class Category{
 
     static allCategories = []
-
-    static categoryContainer = document.getElementById("catagory_container")
+    
+    static categoryForm = document.querySelector("#category-form")
 
     constructor(category){
         this.id = category.id
@@ -16,34 +16,33 @@ class Category{
     }
 
     books(){
-        return Book.allBooks.filter((book) => book.categoryId === parseInt(this.id))
+        return Book.all.filter((book) => book.category_id === parseInt(this.id))
     }
 
 
-    renderCategory(){
 
-        let categoryButton = document.createElement("button")
 
-        categoryButton.value = `${this.id}`
-        categoryButton.innerText = this.name
-    
-        categoryForm.append(categoryButton)
+    render(){
+
+        this.element.innerText = this.name 
+        this.element.id = `category-${this.id}`
+        return this.element
 
     }
 
-    renderCategoryToDom(){
-        Category.categoryContainer.renderCategory()
+    addToDom(){
+        Category.categoryForm.append(this.render())
          this.addListeners()
-      }
+    }
 
-     addListeners(){
-        e.preventdefault()
+    addListeners(){
+       
       this.element.addEventListener('click', this.setActiveCategory)
-     }
+    }
 
     setActivecategory = (e) => {
         let chooseCategory
-        Category.allCategories.forEach(c=>{
+        Category.allCategories.forEach(c => {
 
             if(c.element === this.element && !this.active){
                 
@@ -57,19 +56,35 @@ class Category{
             
         }) 
         
-        Book.filterByCategory(chooseCategory)
+          Book.filterByCategory(chooseCategory)
 
     }
 
-    // addToDropDown(){
-    //     const option = document.createElement('option')
-    //     option.value  = this.id 
-    //     option.innerText = this.name
-    //     dropdown.append(option)
-    // }
+    static findById(id) {
+
+        // return this.allCategories.find(category => category.id === id)
+    }
+
+    static chooseCategory(){
+        // return this.allCategories.filter(category => category.name === this.name)
+    }
 
 
-}
+    // static filterByCategory(e){
+
+    //     let chooseCategory = Category.allCategories.forEach(c => {
+    //         if (c.element === this.element === "To Read")
+    //     })
+    //     debugger
+
+    //     let filerCat = this.allCategories.filter(category => category.name.includes()
+    //         console.log(filterCat)
+    //     }
+            
+    //     ))
 
 
 
+
+    }
+   

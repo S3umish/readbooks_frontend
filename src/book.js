@@ -12,64 +12,12 @@ class Book {
         this.remarks = book.remarks
         this.category_id = book.category_id
 
-        this.element = document.createElement('div')
-        // this.element.id = `book-${id}`
-        // this.element.dataset.id = id 
-
-        // this.element.addEventListener('click', this.handleItemClick)
-
         Book.all.push(this)
     }
 
-    handleItemClick = (e) => {
-        if (e.target.innerText === "Edit"){
-            // OLD 
-            // renderEditForm(e.target)
-
-            // NEW OO
-            this.createEditFields(e.target)
-
-            e.target.innerText = "Save"
-        }else if(e.target.innerText === "Remove"){
-            // OLD
-            // deleteItem(e) 
-
-            // NEW OO
-            this.deleteItem(e)
-        } else if(e.target.innerText === "Save"){ 
-           // OLD
-            // patchElement(e.target.parentElement)
-            
-            // NEW OO
-            this.saveUpdatedItem()
-
-            e.target.innerText = "Edit"
-        }
-    }
-
-        // static editButton = document.querySelector("#showButton"){
-
-        //    editButton.addEventListener("click",handleEditClick)
-        // }
-
-        //  handleEditClick(e){
-        //     e.target.dataset.id
-
-        // }
-
-        // static delButton = document.querySelectorAll("#delButton"){
-
-        //     delButton.addEventListener("click", handleDeleteClick)
-        // }
-
-        // handleDeleteClick(e){
-        //     e.target.dataset.id
-        // }
- 
-
+   
 
     renderBook(){
-
 
         let divCard = document.createElement("div")
         divCard.id = "cardID"
@@ -84,13 +32,6 @@ class Book {
         let Img = document.createElement("img")
         Img.className ="book-avatar"
         Img.src = this.image_url;
-    
-
-        let newButton = document.createElement("button")
-        newButton.setAttribute('data-id', this.id)
-        newButton.classname = "show-btn"
-        newButton.id ="showButton"
-        newButton.innerText = "Edit";
 
         let delButton = document.createElement("button")
         delButton.setAttribute('data-id', this.id)
@@ -98,18 +39,31 @@ class Book {
         delButton.id ="delButton"
         delButton.innerText = "Remove";
 
-        divCard.append(H2, Img , H4, newButton, delButton);
+        divCard.append(H2, Img , H4, delButton);
 
         bookShow.append(divCard)
      
     }
 
 
-
-    deleteBook = (e) => {
-        BookApi.deleteItem(this.id)
-    }
-
     
+    static filterByCategory(chooseCategory){
+        
+        if (chooseCategory){
+            for (const book of Book.all){
+                if(book.categoryId === parseInt(chooseCategory.id)){
+                    book.element.style.display = ""
+                } else {
+                    book.element.style.display = "none"
+                }
+            }
+        } else {
+             
+            for (const book of book.all){
+                book.element.style.display = ""
+            }
+        }
+       
+    }
     
 }

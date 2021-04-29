@@ -4,7 +4,7 @@ class BookApi{
     
     static fetchBooks() {
         
-        fetch(this.baseURL)
+        fetch(BookApi.baseURL)
         .then(response => response.json())
         .then(data => {
             data["data"].forEach(book => {
@@ -25,6 +25,7 @@ class BookApi{
         const categoryId = parseInt(document.querySelector("#categories").value)
         
         BookApi.createBook(title, image_url, remarks, categoryId)
+        form.reset
        
     }
 
@@ -53,42 +54,11 @@ class BookApi{
 
     }
 
-    
-
-
-    static sendPatch(book){
-
-        let bookInfo = { 
-            remarks: remarks
-        }
-
-        let configObj = { 
-            method :"PATCH",
-            headers: {
-                "Content-Type": "application/json",
-                  Accept: "application/json"
-            },
-            body: JSON.stringify(bookInfo)
-        }
-
-        fetch(`${this.baseURL}/${book.id}`, configObj)
-        .then(response => response.json())
-        .then(book => {
-
-            book.renderBook()
-        })
-
-        let form = document.querySelector("#create-book-form")
-        form.reset()
-    
-    }
-
-
 
     //DELETE
 
     static deleteBook(id){
-        // debugger
+        
         let configObj = {
             method: "DELETE",
             headers: {
@@ -105,7 +75,5 @@ class BookApi{
         })
 
     }
-
-
     
 } 
