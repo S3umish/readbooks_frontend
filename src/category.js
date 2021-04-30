@@ -36,8 +36,6 @@ class Category{
       this.element.addEventListener('click', this.setActivecategory)
     }
       
-  
-
 
     setActivecategory = (e) => {
         let chooseCategory
@@ -60,48 +58,7 @@ class Category{
 
     }
 
-    //static findById() {
-
-    //  return this.allCategories.find(category => category.id === this.id)
-     
-    // }
-
-
-    // static chooseCategory(){
-    //      return this.allCategories.filter(category => category.name === this.name)
-    // }
-
-
-
-    // static findByCategoryId(){
-    //     let c = Category.allCategories
-    //     console.log(c)
-    //     const toRead = c.find(c => c.id === "4")
-    //     console.log(toRead.name)
-    //     const reading = c.find(c => c.id === "5")
-    //     console.log(reading.name)
-    //     const finished = c.find(c => c.id === "6")
-    //     console.log(finished.name)
-    // }
-
-
-
-
-    // filterByCategory(){
-
-    //     let categoryBooks = document.querySelector("#category-form")
-        
-    //     categoryBooks.innerHTML = ""
-
-    //     Book.all.forEach(b =>{
-    //         if((b.category_id == this.id) || (this.id == 0))
-    //             return Book.renderBook()
-    //         }
-           
-    //     )
-  
-    // }
-
+    
 
    
 
