@@ -25,6 +25,7 @@ class Book {
 
         let H2 = document.createElement("h4")
         H2.innerText = this.title;
+
        
         let H4 = document.createElement("h6")
         H4.innerText = this.remarks;
@@ -52,6 +53,9 @@ class Book {
         e.target.parentElement.remove()
         BookApi.deleteBook(this.id)
     }
+
+
+
           
 
 }

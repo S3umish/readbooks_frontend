@@ -23,8 +23,12 @@ form.addEventListener("submit", handleFormSubmit)
 function handleFormSubmit(e) {
     e.preventDefault()  
     BookApi.formHandler() 
-    form.reset() 
-      
+    form.reset()       
+}
+
+
+function filterByCategory(category){
+    
 }
 
 

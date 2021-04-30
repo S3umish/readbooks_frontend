@@ -20,23 +20,19 @@ class Category{
         return Book.all.filter((book) => book.category_id === parseInt(this.id))
     }
 
-
     render(){
-
         this.element.innerText = this.name 
         this.element.id = `category-${this.id}`
         return this.element
-
     }
 
     addToDom(){
 
         Category.categoryForm.append(this.render())
-         this.addListeners()
+        this.addListeners()
     }
 
     addListeners(){
-       
       this.element.addEventListener('click', this.setActiveCategory)
     }
 
@@ -62,34 +58,39 @@ class Category{
 
     // static findById(id) {
 
-    //     // return this.allCategories.find(category => category.id === id)
+    //  return this.allCategories.find(category => category.id === id)
     // }
 
     // static chooseCategory(){
     //     // return this.allCategories.filter(category => category.name === this.name)
     // }
 
-
-    // static filterByCategory(e){
-
-    //     let chooseCategory = Category.allCategories.forEach(c => {
-    //         if (c.element === this.element === "To Read")
-    //     })
-    //     debugger
-
-    //     let filerCat = this.allCategories.filter(category => category.name.includes()
-    //         console.log(filterCat)
-    //     }
-            
-    //     ))
-
-    // addToDropDown(){
-    //     const option = document.createElement('option')
-    //     option.value  = this.id 
-    //     option.innerText = this.name
-    //     dropdown.append(option)
-    // }
-
-
+    static findByCategory(){
+        let c = Category.allCategories
+        console.log(c)
+        const toRead = c.find(c => c.id === "4")
+        console.log(toRead.name)
+        const reading = c.find(c => c.id === "5")
+        console.log(reading.name)
+        const finished = c.find(c => c.id === "6")
+        console.log(finished.name)
     }
-   
+
+
+
+
+    filterByCategory(){
+
+        let categoryBooks = document.querySelector("#category-form")
+        
+        categoryBooks.innerHTML = ""
+
+        Book.all.forEach(b =>{
+            if((b.category_id == this.id) || (this.id == 0))
+                return Book.renderBook()
+            }
+           
+        )
+  
+    }
+}
