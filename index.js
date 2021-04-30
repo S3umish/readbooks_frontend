@@ -27,9 +27,7 @@ function handleFormSubmit(e) {
 }
 
 
-function filterByCategory(category){
-    
-}
+
 
 
 

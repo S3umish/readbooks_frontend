@@ -84,6 +84,120 @@
 //  }
 
 
+
+6)//static findById() {
+
+    //  return this.allCategories.find(category => category.id === this.id)
+     
+    // }
+
+
+    // static chooseCategory(){
+    //      return this.allCategories.filter(category => category.name === this.name)
+    // }
+
+
+
+    // static findByCategoryId(){
+    //     let c = Category.allCategories
+    //     console.log(c)
+    //     const toRead = c.find(c => c.id === "4")
+    //     console.log(toRead.name)
+    //     const reading = c.find(c => c.id === "5")
+    //     console.log(reading.name)
+    //     const finished = c.find(c => c.id === "6")
+    //     console.log(finished.name)
+    // }
+
+
+
+
+    // filterByCategory(){
+
+    //     let categoryBooks = document.querySelector("#category-form")
+        
+    //     categoryBooks.innerHTML = ""
+
+    //     Book.all.forEach(b =>{
+    //         if((b.category_id == this.id) || (this.id == 0))
+    //             return Book.renderBook()
+    //         }
+           
+    //     )
+  
+    // }
+
+
+    /// book filter Category 
+
+    // handleFilter =(e) => {
+    //     e.preventDefault
+    //     debugger
+    //     let toRead = document.querySelector("#category-4")
+    //     toRead.addEventListener("click",this.bookfilter)
+    //     console.log("clicked To Read")
+       
+
+    //     let reading = document.querySelector("#category-5")
+    //     reading.addEventListener("click",this.bookfilter)
+    //     console.log("clicked To Reading")
+
+    //     let finished = document.querySelector("#category-6")
+    //     finished.addEventListener("click",this.bookfilter)
+    //     console.log("clicked Finsihed")
+
+    // }
+
+    // static filterByCategory(){
+    //     debugger
+        
+    //     Book.all.forEach(b => {
+
+    //         //Book.all.map(b => b.category_id)
+    //         // gives all category ids
+  
+    //         if(this.handleFilter){
+
+    //             for (const book of Book.all){
+
+    //                 if (book.element === this.element.category_id === "4"){ 
+    //                 console.log("To Read")
+
+    //                 } else {
+    //                     book.element === this.element.category_id === "5"
+    //                     console.log("Reading")
+    //                 }
+                    
+    //             } 
+
+    //         } else {
+
+    //             for (const book of Book.all){
+    //                 book.element === this.element.category_id === "6"
+    //                 console.log("Finished")
+    //             }
+    //         }
+
+
+    //     }
+            
+            
+            
+    //     )}
+
+ 8) Inside Book.js
+      // const catObj = Category.category_id
+                    // for (const book of Book.all){
+                    //     console.log(chooseCategory)
+                    //     if (book.category_id === parseInt(chooseCategory.id)){
+                    //             book.element.style.display = ""
+                    //     } else {
+                    //             // book.element.style.display = "none"
+                    //             console.log(book)
+                    //     }}
+
+
+
  
 
 
@@ -135,3 +249,49 @@ function createBookForm() {
     bookForm.addEventListener("submit", bookCreate)
     
 }
+
+
+
+
+
+    // static filterByCategory(chooseCategory){
+
+    //         // Book.all.map(b => b.category_id)
+
+    //         // console.log(category_id)
+        
+    //         // return this.renderBook
+
+    //     let c = parseInt(chooseCategory.id)
+    //     //  debugger
+    //     for (const book of Book.all){
+           
+    //         // if choose Category , we want  to return a filter using book.category_id -= c logic 
+    //         //otherwise return all the books
+
+    //         if (book.category_id === c ){
+    //             console.log(book)
+    //              return this.renderBookCategory()
+    //         } else { 
+    //              return this.renderBook()
+    //         }
+
+            // if (book.category_id === c) {
+            //     Book.renderBookCategory()
+
+            // } else{
+            //     Book.renderBook()
+            // }
+
+
+        
+        //  }
+    
+        
+        // }
+
+
+
+
+
+

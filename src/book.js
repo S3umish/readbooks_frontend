@@ -56,7 +56,25 @@ class Book {
 
 
 
-          
 
-}
+    static filterByCategory(chooseCategory){
+            
+        if (chooseCategory){
 
+            let b =  Book.all.filter((book) => book.category_id === parseInt(chooseCategory.id))
+            // console.log(b)
+            let show = document.querySelector("#book-show")
+                show.innerHTML = ` `
+
+                for (const book of b){
+                    book.renderBook()}
+        
+            } else {
+
+            for (const book of Book.all){
+                console.log(book)
+                
+            }}
+    }
+
+}       
