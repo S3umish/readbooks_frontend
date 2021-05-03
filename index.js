@@ -3,15 +3,15 @@ const BASE_URL = "http://localhost:3000"
 
 const list = document.querySelector("#List-of-Books")
 
-const bookShowPage = document.getElementById("display-books")
-
 const submitButton = document.getElementById("create-button")
 
 const dropdown = document.querySelector("#cat-dropdown")
 
 
 const bookShow = document.querySelector("#book-show")
-// bookShow.addEventListener("click",handleBookClick)
+
+// const bookSortDisplay = document.querySelector("#display-books")
+//  bookSortDisplay.addEventListener("click",handleSortClick)
 
 
 
@@ -26,6 +26,29 @@ function handleFormSubmit(e) {
     form.reset()       
 }
 
+
+
+ const greetButton = document.querySelector("button").addEventListener("click", handleClick)
+
+
+ function handleClick(e) {
+    e.preventDefault()
+    const timeString = document.getElementById('time').value
+    displayMessage(greet(timeString))
+    
+ }
+
+ function displayMessage(msg){
+     document.getElementById("greeting").innerText = msg
+ }
+
+
+ function greet(timeStr){
+     const hour = parseInt(timeStr,10)
+     if(hour < 12) return "Good Morning"
+     if(hour > 17) return "Good Evening"
+     return "Good Afternoon"
+ }
 
 
 
