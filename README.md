@@ -1,6 +1,7 @@
 # readbooks_frontend
 
 ReadBooks is a single page web application built with a Ruby on Rails API , and JavaScript frontend that allows a user to add a book, with a title , image and remarks under three categories "To Read", "Reading" and "Finished". The Books may be viewed and/or deleted. The user can can choose to filter the categories to view the books under choosen category.
+
 ![](https://media.giphy.com/media/iDBAvQ35bySv3n4vfm/giphy.gif)
 
 Video Demo : https://youtu.be/9kL31qYAWL8
